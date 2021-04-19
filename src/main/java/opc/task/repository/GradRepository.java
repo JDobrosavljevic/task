@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface GradRepository extends JpaRepository<Grad, Integer> {
-    @Query(value="SELECT g.naziv \n" +
+    @Query(value="SELECT DISTINCT g.naziv \n" +
             "FROM grad g \n" +
             "JOIN kartica_dozvoljen_grad kdg ON g.id=kdg.grad_id \n" +
             "JOIN kartica k ON kdg.kartica_id=k.id\n" +
